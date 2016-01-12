@@ -1,0 +1,27 @@
+/* Empty. Add your own CSS if you like
+
+Helpful colour scheme website : http://www.colorhexa.com/296ad4
+*/
+
+.odd {
+  background-color:  rgb(188, 208, 242);
+  color:  rgb(255, 255, 255);
+}
+.even {
+  background-color: rgb(204,220,245);
+}
+.pane {
+    background-color: rgb(171,197,239);
+}
+
+.row-header {
+    background-color:  rgb(220, 231, 248);
+}
+
+.item h2 {
+  font-size: 20px;
+}
+
+/* Knob */
+.demo{text-align: center; width: 280px; float: left}
+.demo > p{font-size: 20px}

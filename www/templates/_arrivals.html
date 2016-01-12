@@ -1,0 +1,42 @@
+<p ng-if="status!=null">{{status}}</p>
+
+<div ng-show="dataAvailable==false">
+  <h2>{{lineNumber}}, No arrivals are expected in the next 30 minutes. Please try again later </h2>
+</div>
+<div ng-show="dataAvailable">
+  <h3>{{stationName}}</h3>
+  <p id="clock"></p>
+  <ion-item class="row-header">
+    <div class="row">
+      <div class="col col-20">
+          <i class="icon ion-android-bus assertive"></i>
+      </div>
+      <div class="col">
+          Destination
+      </div>
+      <div class="col col-20">
+          Arrival
+      </div>
+    </div>
+  </ion-item>
+  <ion-list can-swipe="true" on-swipe-left="onSwipeLeft()">
+    <ion-item ng-repeat="arrival in arrivals" ng-class-odd="'odd'" ng-class-even="'even'">
+
+      <div class="row">
+                <div class="col col-20">
+                    <h2>{{arrival.lineName}}</h2>
+                </div>
+                <div class="col">
+                    <h2>{{arrival.destinationName}}</h2>
+                </div>
+                <div class="col col-20">
+                    <h2>{{arrival.due}}</h2>
+                </div>
+      </div>
+      <ion-option-button class="button-positive" ng-click="openAlarmModal(arrival)">
+          {{arrival.expectedArrival | date : 'HH:mm:ss'}}
+      </ion-option-button>
+
+    </ion-item>
+    </ion-list>
+  </div>

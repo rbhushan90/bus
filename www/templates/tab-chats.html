@@ -1,0 +1,17 @@
+<ion-view view-title="Arrivals by Bus Number">
+  <ion-content class="padding">
+        <button class="button button-assertive" ng-click="getData(33)">33</button>
+        <button class="button button-positive" ng-click="getData(281)">281</button>
+        <button class="button button-royal" ng-click="getData(285)">285</button>
+        <button class="button button-stable" ng-click="getData(481)">481</button>
+        <button class="button button-energized" ng-click="getData('R68')">R68</button>
+        <button class="button button-calm" ng-click="getData('X26')">X26</button>
+
+      <ng-include src="'templates/_arrivals.html'"></ng-include>
+  </ion-content>
+</ion-view>
+
+<!--
+<ion-item ng-repeat="arrival in arrivals"   style="background-color: #C2A5A5 !important" >
+
+-->
