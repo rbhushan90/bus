@@ -6,34 +6,38 @@
     </div>
   </ion-header-bar>
 
-  <ion-content>
-    <div class="row">
-      <div class="col col-25">
-        <ion-item ng-class-odd="'odd'">
-            Due in {{busArrival.dueInMinutes}}
-        </ion-item>
-        <ion-item ng-class-even="'even'">
-            {{busArrival.expectedArrival | date: "HH:mm:ss"}}
-        </ion-item>
-      </div>
-      <div class="col">
-        <div id="alarmDial">
-          <input class="knob" data-fgColor="#ff0000" data-width="100" data-height="100"
-               data-rotation="anticlockwise"
-               value="5" data-step="1" data-min="1" data-max="10">
-        </div>
-      </div>
-      <div class="col col-25">
-        <ion-item ng-class-odd="'odd'">
-            {{busArrival.vehicleId}}
-        </ion-item>
-        <ion-item ng-class-odd="'odd'">
-            <button class="button button-clear button-positive" ng-click="setAlarm()">Set Alarm</button>
-        </ion-item>
 
+  <ion-content>
+    <div class="row row-center">
+      <div class="col col-33">
+        &nbsp;
       </div>
+      <div class="col col-33">
+        <knob knob-data="busArrival.nextAlarm" knob-options="options"></knob>
+      </div>
+      <div class="col-33">
+        <img ng-if="busArrival.hasAlarm" ng-src="img/clock-animated.gif" class="alarmClock" ng-click="toggleAlarm()">
+        <img ng-if="busArrival.hasAlarm==false" ng-src="img/clock-static.gif" class="alarmClock" ng-click="toggleAlarm()">
+      </div>
+    </div>
+
+    <div class="row row-center">
+      <div class="col col-25">
+        &nbsp;
+      </div>
+      <div class="col col-65">
+        <p ng-if="busArrival.hasAlarm">Ring {{busArrival.nextAlarm}} m before Bus arrives</p>
+      </div>
+      <div class="col-10">
+      </div>
+    </div>
+
+
     </div>
 
   </ion-content>
 
 </ion-modal-view>
+
+<!--
+-->

@@ -19,8 +19,9 @@
       </div>
     </div>
   </ion-item>
-  <ion-list can-swipe="true" on-swipe-left="onSwipeLeft()">
-    <ion-item ng-repeat="arrival in arrivals" ng-class-odd="'odd'" ng-class-even="'even'">
+  <ion-list>
+    <ion-item ng-repeat="arrival in arrivals" ng-class-odd="'odd'" ng-class-even="'even'"
+            ng-click="openAlarmModal(arrival)">
 
       <div class="row">
                 <div class="col col-20">
@@ -30,12 +31,11 @@
                     <h2>{{arrival.destinationName}}</h2>
                 </div>
                 <div class="col col-20">
-                    <h2>{{arrival.due}}</h2>
+                  <h2>
+                  {{arrival.due}}<img ng-if="arrival.hasAlarm" ng-src="img/clock-static.gif" class="alarmClockSmall">
+                  </h2>
                 </div>
       </div>
-      <ion-option-button class="button-positive" ng-click="openAlarmModal(arrival)">
-          {{arrival.expectedArrival | date : 'HH:mm:ss'}}
-      </ion-option-button>
 
     </ion-item>
     </ion-list>
