@@ -19,11 +19,15 @@ Helpful colour scheme website : http://www.colorhexa.com/296ad4
 }
 
 .item h2 {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .item  {
   padding: 1px;
+}
+
+.col {
+  padding: 1px !important;
 }
 
 .alarmClock {

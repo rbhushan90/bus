@@ -13,8 +13,8 @@ angular.module('starter')
         link: function($scope, $element) {
             var knobInit = $scope.knobOptions() || {};
 
-            console.log("knobInit = ");
-            console.log(knobInit);
+            //console.log("knobInit:");
+            //console.log(knobInit);
 
             knobInit.release = function(newValue) {
                 $timeout(function() {

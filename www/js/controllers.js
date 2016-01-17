@@ -65,8 +65,7 @@ angular.module('starter')
 
     $scope.openAlarmModal = function(arrival) {
       console.log("----> open Alarm Modal");
-      $ionicListDelegate.closeOptionButtons();
-
+    
       if ( arrival.hasAlarm==true ) {
         console.log("there's an existing alarm = " + arrival.nextAlarm);
       }
@@ -92,8 +91,8 @@ angular.module('starter')
 
       //angular Knob
       $scope.options = {
-          width: 100,
-          height: 100,
+          width: 200,
+          height: 200,
           //thickness: .2,
           fgColor: "#ff0000",
           rotation : "anticlockwise",

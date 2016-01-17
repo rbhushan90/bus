@@ -9,13 +9,13 @@
 
   <ion-content>
     <div class="row row-center">
-      <div class="col col-33">
+      <div class="col col-10">
         &nbsp;
       </div>
-      <div class="col col-33">
+      <div class="col">
         <knob knob-data="busArrival.nextAlarm" knob-options="options"></knob>
       </div>
-      <div class="col-33">
+      <div class="col col-20">
         <img ng-if="busArrival.hasAlarm" ng-src="img/clock-animated.gif" class="alarmClock" ng-click="toggleAlarm()">
         <img ng-if="busArrival.hasAlarm==false" ng-src="img/clock-static.gif" class="alarmClock" ng-click="toggleAlarm()">
       </div>
@@ -25,10 +25,8 @@
       <div class="col col-25">
         &nbsp;
       </div>
-      <div class="col col-65">
+      <div class="col">
         <p ng-if="busArrival.hasAlarm">Ring {{busArrival.nextAlarm}} m before Bus arrives</p>
-      </div>
-      <div class="col-10">
       </div>
     </div>
 

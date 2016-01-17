@@ -4,25 +4,21 @@ angular.module('starter')
 
   // remember , this is a MODAL not VIEW !!
   $scope.$on('modal.shown', function() {
-      console.log("modal shown, start watching Knob value for change");
+      console.log("modal shown");
   });
 
   $scope.hideAlarmModal = function() {
-      console.log("hideAlarmModal()");
       $rootScope.alarmModal.hide();
   }
 
   $scope.toggleAlarm = function() {
-    console.log("Toggle Alarm");
     var newAlarm=null;
 
     if ( $scope.busArrival.hasAlarm ) {
-      console.log("Switch Alarm OFF");
       newAlarm = false;  // switch it off
       $scope.clockMode = "img/clock-static.gif";
       console.log("Delete the alarm");
     } else {
-      console.log("Set Alarm !");
       newAlarm = true;
       $scope.clockMode = "img/clock-animated.gif";
       console.log("setAlarm() for num minutes before arrival = " + $scope.busArrival.nextAlarm);
@@ -33,13 +29,7 @@ angular.module('starter')
       var mins_before_arrival = expArrivalTime - ( $scope.busArrival.nextAlarm * 60 * 1000);
 
       var alarm = new Date(mins_before_arrival);
-      //console.log("exp   = " + expArrival);
-      //console.log("alarm = " + alarm);
     }
-
-    //console.log("vehicle = " + $scope.busArrival.vehicleId);
-
-//    console.log($scope.arrivals);
     var data = $scope.arrivals;
     data.forEach(function (arrival, index) {
         if ( arrival.vehicleId == $scope.busArrival.vehicleId) {
@@ -49,12 +39,6 @@ angular.module('starter')
         //console.log(arrival); // logs "3", "5", "7"
     });
     $scope.arrivals = data;
-
-    /* Self-close after the Toggle
-    $timeout(function()  {
-      $rootScope.alarmModal.hide();
-    }, 600);
-    */
 
   }
 

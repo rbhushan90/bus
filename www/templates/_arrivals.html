@@ -8,35 +8,35 @@
   <p id="clock"></p>
   <ion-item class="row-header">
     <div class="row">
-      <div class="col col-20">
-          <i class="icon ion-android-bus assertive"></i>
+      <div class="col col-15">
+        <i class="icon ion-android-bus assertive"></i>
       </div>
-      <div class="col">
-          Destination
+      <div class="col col-60">
+        Destination
       </div>
-      <div class="col col-20">
-          Arrival
+      <div class="col col-25">
+        Arrival
       </div>
     </div>
   </ion-item>
   <ion-list>
-    <ion-item ng-repeat="arrival in arrivals" ng-class-odd="'odd'" ng-class-even="'even'"
-            ng-click="openAlarmModal(arrival)">
+    <ion-item ng-repeat="arrival in arrivals" ng-class-odd="'odd'" ng-class-even="'even'" ng-click="openAlarmModal(arrival)">
 
       <div class="row">
-                <div class="col col-20">
-                    <h2>{{arrival.lineName}}</h2>
-                </div>
-                <div class="col">
-                    <h2>{{arrival.destinationName}}</h2>
-                </div>
-                <div class="col col-20">
-                  <h2>
-                  {{arrival.due}}<img ng-if="arrival.hasAlarm" ng-src="img/clock-static.gif" class="alarmClockSmall">
-                  </h2>
-                </div>
+        <div class="col col-15">
+          <h2>{{arrival.lineName}}</h2>
+        </div>
+        <div class="col col-60">
+          <h2>{{arrival.destinationName}}</h2>
+        </div>
+        <div class="col col-25">
+          <h2>
+            {{arrival.due}}
+            <img ng-if="arrival.hasAlarm" ng-src="img/clock-static.gif" class="alarmClockSmall">
+          </h2>
+        </div>
       </div>
 
     </ion-item>
-    </ion-list>
-  </div>
+  </ion-list>
+</div>
